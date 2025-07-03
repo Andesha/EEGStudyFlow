@@ -94,6 +94,19 @@ Below is a list of notebooks in a rough ordering of their intended use.
 5. `erp_study`
     * Based on conditions, performs a traditional ERP study on all subjects in the derivatives
 
+### Workflow Diagram
+
+```mermaid
+flowchart TD
+    A[test_environment] --> B[explore_source]
+    B --> C[init_bids_study]
+    C --> D{Using PyLossless?}
+    D -- Yes --> E{See PyLossless}
+    D -- No --> F[erp_study]
+    E --> G[study_summary]
+    G --> H[segmentation]
+    H --> F
+```
 
 ### TODO:
 
